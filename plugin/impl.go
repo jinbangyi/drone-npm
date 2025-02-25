@@ -158,6 +158,7 @@ func (p *Plugin) shouldPublishPackage() (bool, error) {
 
 	trace(cmd)
 	out, err := cmd.CombinedOutput()
+	logrus.WithField("out", string(out)).Info("cmd output")
 
 	// see if there was an error
 	// if there is an error its likely due to the package never being published
