@@ -331,7 +331,7 @@ func whoamiCommand() *exec.Cmd {
 // packageVersionsCommand gets the versions of the npm package.
 func packageVersionsCommand(name string) *exec.Cmd {
 	// ignore warning info
-	return exec.Command("/bin/sh", "-c", fmt.Sprintf("npm config set loglevel error && npm view %s versions --json", name))
+	return exec.Command("/bin/sh", "-c", fmt.Sprintf("npm config set loglevel error --global && npm view %s versions --json", name))
 }
 
 // publishCommand runs the publish command
